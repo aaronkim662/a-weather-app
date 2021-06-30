@@ -1,8 +1,6 @@
 import './App.css';
-import { useState } from 'react';
 import { useActions } from './hooks/useActions';
 import { useTypedSelector } from './hooks/useTypedSelector';
-import { store } from './state';
 import WeatherInput from './components/weather-input/weather-input';
 
 const WeatherApp: React.FC = () => {
