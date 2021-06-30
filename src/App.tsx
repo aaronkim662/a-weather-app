@@ -1,7 +1,33 @@
 import './App.css';
+import { useState } from 'react';
+import { useActions } from './hooks/useActions';
+import { useTypedSelector } from './hooks/useTypedSelector';
+import { store } from './state';
+import WeatherInput from './components/weather-input/weather-input';
 
 const WeatherApp: React.FC = () => {
-  return <div>Hello</div>
+
+  // const [location, setLocation] = useState('')
+
+  const { SearchWeather } = useActions();
+
+  const { data, error, loading } = useTypedSelector((state) => state.weather);
+
+  const getWeather = async () => {
+    // e.preventDefault()
+    SearchWeather('seattle')
+    // console.log('test', test)
+    console.log('here', data)
+  };
+
+  return (
+      <div>
+        Hello
+        <button onClick = {getWeather}>Weather</button>
+        <WeatherInput />
+      </div>
+
+  )
 }
 
 export default WeatherApp;
