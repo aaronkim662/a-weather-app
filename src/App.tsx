@@ -12,9 +12,7 @@ const WeatherApp: React.FC = () => {
   const { data, error, loading } = useTypedSelector((state) => state.weather);
 
   const getWeather = async () => {
-    // e.preventDefault()
     SearchWeather('seattle')
-    // console.log('test', test)
     console.log('here', data)
   };
 
