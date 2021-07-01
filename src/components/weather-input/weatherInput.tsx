@@ -16,20 +16,22 @@ const WeatherInput: React.FC<InputType> = (props) => {
   };
 
   return(
-    <form id = 'form-element' onSubmit = {(e) => props.getWeather(e)}>
+    <form id = 'weather-form' onSubmit = {(e) => props.getWeather(e)}>
       <FontAwesomeIcon
-        id = 'search-weather-icon'
+        id = 'weather-icon-search'
+        className = 'weather-icon'
         icon = {faSearch}
       />
       <input
+        id = 'weather-input'
         value = {props.location}
         placeholder = 'Enter a city'
         onChange = {(e) => props.setLocation(e.target.value)}
       />
       {props.location.length > 0 ?
         <FontAwesomeIcon
-          id = 'clear-content-icon'
-          className = 'clear-element'
+          id = 'weather-icon-clear'
+          className = 'weather-icon'
           icon = {faTimesCircle}
           onClick={clearContent}
         /> : <div className = 'clear-element'></div>
