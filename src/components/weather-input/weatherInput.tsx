@@ -8,6 +8,10 @@ interface InputType extends InputHTMLAttributes<HTMLInputElement>{
 };
 
 const WeatherInput: React.FC<InputType> = (props) => {
+
+  const clearContent = () => {
+    props.setLocation('')
+  }
   return(
     <form id = 'form-element' onSubmit = {(e) => props.getWeather(e)}>
       <input value = {props.location} placeholder = 'Enter a city' onChange = {(e) => props.setLocation(e.target.value)}/>
