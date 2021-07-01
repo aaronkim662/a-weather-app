@@ -1,4 +1,4 @@
-import './App.css';
+import './weatherApp.sass';
 import { useActions } from './hooks/useActions';
 import { useTypedSelector } from './hooks/useTypedSelector';
 import WeatherInput from './components/weather-input/weatherInput';
@@ -11,21 +11,22 @@ const WeatherApp: React.FC = () => {
 
   const { SearchWeather } = useActions();
 
-  const { data, error, loading } = useTypedSelector((state) => state.weather);
+  const { data, error, loading } = useTypedSelector((state) => state.weather); // eslint-disable-line
 
   const getWeather = async (e: any) => {
     e.preventDefault()
     SearchWeather(location)
-    console.log('here', data)
   };
 
   return (
       <div>
-        <WeatherIcon />
-        <WeatherInput
-          location=  {location}
-          getWeather = {getWeather}
-          setLocation ={setLocation}/>
+        <div id = 'app-header'>
+          <WeatherIcon />
+          <WeatherInput
+            location=  {location}
+            getWeather = {getWeather}
+            setLocation ={setLocation}/>
+        </div>
       </div>
   )
 }
