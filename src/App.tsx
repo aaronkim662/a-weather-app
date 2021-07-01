@@ -2,6 +2,7 @@ import './App.css';
 import { useActions } from './hooks/useActions';
 import { useTypedSelector } from './hooks/useTypedSelector';
 import WeatherInput from './components/weather-input/weatherInput';
+import WeatherIcon from './components/weather-icon/weatherIcon';
 import { useState } from 'react';
 
 const WeatherApp: React.FC = () => {
@@ -20,7 +21,11 @@ const WeatherApp: React.FC = () => {
 
   return (
       <div>
-        <WeatherInput location=  {location} getWeather = {getWeather} setLocation ={setLocation}/>
+        <WeatherIcon />
+        <WeatherInput
+          location=  {location}
+          getWeather = {getWeather}
+          setLocation ={setLocation}/>
       </div>
   )
 }
