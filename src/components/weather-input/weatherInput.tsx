@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faTimes, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import './weatherInput.sass';
 
 interface InputType extends InputHTMLAttributes<HTMLInputElement>{
