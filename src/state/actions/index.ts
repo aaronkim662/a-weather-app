@@ -6,7 +6,7 @@ interface SearchWeatherAction {
 
 interface SearchWeatherSuccessAction {
   type: ResponseType.SEARCH_WEATHER_SUCCESS;
-  payload: SearchState[];
+  payload: SearchState[] | string;
 }
 
 interface SearchWeatherErrorAction {
