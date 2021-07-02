@@ -4,7 +4,7 @@ import { ResponseType, SearchState } from "../action-types";
 interface WeatherState {
   loading: boolean;
   error: string | null;
-  data: SearchState[]
+  data: SearchState[] | string
 }
 
 const initialState = {
