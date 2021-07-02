@@ -32,20 +32,20 @@ export const SearchWeather = (location: string) => {
         type: ResponseType.SEARCH_WEATHER_SUCCESS,
         payload: weather
       })
-      store.dispatch({
-        type: ResponseType.SEARCH_WEATHER_ERROR,
-        payload: weather,
-       })
+      // store.dispatch({
+      //   type: ResponseType.SEARCH_WEATHER_SUCCESS,
+      //   payload: weather,
+      //  })
 
     }catch (err) {
       dispatch({
        type: ResponseType.SEARCH_WEATHER_ERROR,
-       payload: [],
+       payload: 'Error'
       })
-      store.dispatch({
-        type: ResponseType.SEARCH_WEATHER_ERROR,
-        payload: [],
-       })
+      // store.dispatch({
+      //   type: ResponseType.SEARCH_WEATHER_ERROR,
+      //   payload: [],
+      //  })
     }
   }
 }
