@@ -5,8 +5,8 @@ import './weatherInput.sass';
 
 interface InputType extends InputHTMLAttributes<HTMLInputElement>{
   location: string;
-  getWeather: ( event: React.FormEvent<HTMLFormElement>) => void;
   setLocation: any;
+  getWeather: ( event: React.FormEvent<HTMLFormElement>) => void;
 };
 
 const WeatherInput: React.FC<InputType> = (props) => {
