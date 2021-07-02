@@ -17,7 +17,7 @@ app.get('/weather/:location', (req, res) => {
       res.json(response.data);
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.response)
     });
 });
 
