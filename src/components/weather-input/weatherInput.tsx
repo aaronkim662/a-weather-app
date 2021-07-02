@@ -26,6 +26,7 @@ const WeatherInput: React.FC<InputType> = (props) => {
         id = 'weather-input'
         value = {props.location}
         placeholder = 'Enter a city'
+        // autoComplete = 'off'
         onChange = {(e) => props.setLocation(e.target.value)}
       />
       {props.location.length > 0 ?
