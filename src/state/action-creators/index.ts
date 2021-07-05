@@ -17,6 +17,7 @@ export const SearchWeather = (location: string) => {
 
       const weather: any = [{
         description: {
+          name: data.name,
           inner_description: data.weather[0].description,
           main_description: data.weather[0].main
         },
@@ -24,8 +25,11 @@ export const SearchWeather = (location: string) => {
           feels_like: data.main.feels_like,
           temp: data.main.temp,
           temp_max: data.main.temp_max,
-          temp_min: data.main.temp_min
-        }
+          temp_min: data.main.temp_min,
+          humidity: data.main.humidity,
+          pressure: data.main.pressure
+        },
+        wind: data.wind.speed
       }]
 
       dispatch({
