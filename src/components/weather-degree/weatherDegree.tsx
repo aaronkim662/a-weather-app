@@ -1,5 +1,5 @@
-import React, { ButtonHTMLAttributes } from 'react';
 import './weatherDegree.sass';
+import React, { ButtonHTMLAttributes } from 'react';
 
 interface DegreeProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   degree: string;
