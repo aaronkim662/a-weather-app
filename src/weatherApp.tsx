@@ -39,7 +39,7 @@ const WeatherApp: React.FC = () => {
         </div>
         {loading ? <LoadingContainer /> : null}
         {data.length && data === 'Error' && loading === false ? <ErrorContainer /> : null}
-        {data.length > 0 && data[0] && loading === false ?
+        {data.length > 0 && data !== 'Error' && loading === false ?
           <WeatherContainer
             data = {data}
             error = {error}
