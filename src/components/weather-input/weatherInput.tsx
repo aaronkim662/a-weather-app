@@ -1,7 +1,7 @@
+import './weatherInput.sass';
 import React, { InputHTMLAttributes } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import './weatherInput.sass';
 
 interface InputType extends InputHTMLAttributes<HTMLInputElement>{
   location: string;
@@ -39,6 +39,6 @@ const WeatherInput: React.FC<InputType> = (props) => {
       }
     </form>
   )
-}
+};
 
 export default WeatherInput;
