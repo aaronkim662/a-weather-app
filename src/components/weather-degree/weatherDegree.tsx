@@ -7,17 +7,22 @@ interface DegreeProps extends ButtonHTMLAttributes<HTMLButtonElement>{
 }
 
 const WeatherDegree: React.FC<DegreeProps> = (props) => {
-  return <div id = 'degree-container'>
-    <button
-      className = 'degree-button'
-      value = {props.degree}
-      onClick = {() => props.setDegree('c')}
-    >&deg;C</button>
-    <button
-      className = 'degree-button'
-      value = {props.degree}
-      onClick = {() => props.setDegree('f')}
-    >&deg;F</button>
+
+  const setDegreeFunction = (degree: string) => {
+    degree === 'c' ? props.setDegree('f') : props.setDegree('c');
+  };
+
+  const addDegreeClass = (element:string) => {
+    if (props.degree === element) {
+      return 'active-degree'
+    }
+    return 'inactive-degree'
+  };
+
+  return <div id = 'degree-container' onClick = {() => setDegreeFunction(props.degree)}>
+    <div className = {addDegreeClass('f')}>&deg;F</div>
+    <div> | </div>
+    <div className = {addDegreeClass('c')}>&deg;C</div>
   </div>
 }
 
