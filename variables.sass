@@ -19,8 +19,12 @@ $secondary-color: #d3d3d3
   flex-direction: column
   align-items: center
 
+%display-around
+  @extend %display-flex
+  justify-content: space-around
+  width: 100%
+
 %border-shared
-  border-style: groove
   border-radius: 10px
   font-family: $font-family
 
