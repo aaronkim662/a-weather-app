@@ -1,13 +1,13 @@
 import './weatherApp.sass';
-import { useState } from 'react';
 import { useActions } from './hooks/useActions';
+import { useState } from 'react';
 import { useTypedSelector } from './hooks/useTypedSelector';
-import WeatherInput from './components/weather-input/weatherInput';
-import WeatherIcon from './components/weather-icon/weatherIcon';
-import WeatherDegree from './components/weather-degree/weatherDegree';
-import WeatherContainer from './components/weather-container/weatherContainer';
-import ErrorContainer from './components/error-container/errorContainer';
+import EmptyContainer from './components/empty-container/emptyContainer';
 import LoadingContainer from './components/loading-container/loadingContainer';
+import ErrorContainer from './components/error-container/errorContainer';
+import WeatherContainer from './components/weather-container/weatherContainer';
+import WeatherIcon from './components/weather-icon/weatherIcon';
+import WeatherInput from './components/weather-input/weatherInput';
 
 const WeatherApp: React.FC = () => {
 
@@ -32,11 +32,8 @@ const WeatherApp: React.FC = () => {
             location=  {location}
             getWeather = {getWeather}
             setLocation ={setLocation}/>
-          <WeatherDegree
-            degree = {degree}
-            setDegree = {setDegree}
-          />
         </div>
+        {!loading && data.length === 0 ? <EmptyContainer /> : null}
         {loading ? <LoadingContainer /> : null}
         {data.length && data === 'Error' && loading === false ? <ErrorContainer /> : null}
         {data.length > 0 && data !== 'Error' && loading === false ?
@@ -45,6 +42,7 @@ const WeatherApp: React.FC = () => {
             error = {error}
             loading = {loading}
             degree = {degree}
+            setDegree = {setDegree}
           /> : null
         }
       </div>
