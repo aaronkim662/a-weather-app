@@ -1,11 +1,13 @@
 import './weatherContainer.sass';
 import * as js from '../../javascripts';
+import WeatherDegree from '../weather-degree/weatherDegree';
 
 interface ContainerType {
   data: any;
   error: string | null;
   loading: boolean;
   degree: string;
+  setDegree: any;
 }
 
 const WeatherContainer: React.FC<ContainerType> = (props) => {
@@ -18,12 +20,16 @@ const WeatherContainer: React.FC<ContainerType> = (props) => {
         <div>{description.name}</div>
         <div>
           <div className = {description.main_description}>Pic</div>
-          <div id = 'high-low-temps'>{js.setTemperature(temp.temp_min, props.degree)}&deg;/ {js.setTemperature(temp.temp_max, props.degree)}&deg;</div>
+
         </div>
       </div>
-      <div id = 'main-temp'>{js.setTemperature(temp?.temp, props.degree)}&deg;</div>
-      <div>
+      <div id = 'main-temp-section'>
+        <div id = 'main-temp'>{js.setTemperature(temp?.temp, props.degree)}&deg;</div>
+        <WeatherDegree setDegree = {props.setDegree} degree = {props.degree}/>
+      </div>
+      <div id = 'bottom-temp-section'>
         <div>{js.capitalize(description.inner_description)}</div>
+        <div id = 'high-low-temps'>{js.setTemperature(temp.temp_min, props.degree)}&deg;/ {js.setTemperature(temp.temp_max, props.degree)}&deg;</div>
       </div>
     </div>
     <div id = 'container-right'>
