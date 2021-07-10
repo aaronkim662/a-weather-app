@@ -1,6 +1,7 @@
 import './weatherContainer.sass';
 import * as js from '../../javascripts';
 import WeatherDegree from '../weather-degree/weatherDegree';
+import WeatherDisplay from '../weather-display/weatherDisplay';
 
 interface ContainerType {
   data: any;
@@ -19,8 +20,7 @@ const WeatherContainer: React.FC<ContainerType> = (props) => {
       <div id = 'weather-description'>
         <div>{description.name}</div>
         <div>
-          <div className = {description.main_description}>Pic</div>
-
+          <WeatherDisplay description = {description.main_description}/>
         </div>
       </div>
       <div id = 'main-temp-section'>
