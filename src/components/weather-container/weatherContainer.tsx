@@ -19,13 +19,16 @@ const WeatherContainer: React.FC<ContainerType> = (props) => {
     <div id = 'container-left'>
       <div id = 'weather-description'>
         <div>{description.name}</div>
-        <div>
+        {/* <div>
           <WeatherDisplay description = {description.main_description}/>
-        </div>
+        </div> */}
       </div>
       <div id = 'main-temp-section'>
         <div id = 'main-temp'>{js.setTemperature(temp?.temp, props.degree)}&deg;</div>
-        <WeatherDegree setDegree = {props.setDegree} degree = {props.degree}/>
+        <div id = 'main-temp-right-section'>
+          <WeatherDisplay description = {description.main_description}/>
+          <WeatherDegree setDegree = {props.setDegree} degree = {props.degree}/>
+        </div>
       </div>
       <div id = 'bottom-temp-section'>
         <div>{js.capitalize(description.inner_description)}</div>
