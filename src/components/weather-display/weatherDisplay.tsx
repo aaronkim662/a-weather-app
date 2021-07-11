@@ -11,13 +11,12 @@ const WeatherDisplay: React.FC<MainDescription> = (props) => {
 
   const [icon, setIcon] = useState('');
 
+
   const WeatherIcon = (desc: string) => {
     if (desc === 'Clouds') {
       return <WI.WiCloudy />
     }else if (desc === 'Thunderstorm') {
       return <WI.WiNightThunderstorm />
-    }else if (desc === 'Sunny') {
-      return <WI.WiDaySunny />
     }else if (desc === 'Mist') {
       return <WI.WiRaindrops />
     }else {
@@ -25,10 +24,7 @@ const WeatherDisplay: React.FC<MainDescription> = (props) => {
     }
 
   }
-  // clouds
-  // sunny
-  // rain
-  // clear
+
   return <div className = 'weather-display-icon'>
     {WeatherIcon(props.description)}
   </div>
