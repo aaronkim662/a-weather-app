@@ -1,16 +1,12 @@
 import './weatherDisplay.sass';
 // import React from 'react';
 import  *  as WI from 'react-icons/wi';
-import { useState } from 'react';
 
 interface MainDescription {
   description : string
 }
 
 const WeatherDisplay: React.FC<MainDescription> = (props) => {
-
-  const [icon, setIcon] = useState('');
-
 
   const WeatherIcon = (desc: string) => {
     if (desc === 'Clouds') {
