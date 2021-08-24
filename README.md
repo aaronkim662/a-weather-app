@@ -19,4 +19,4 @@ In a terminal tab, run `nodemon nodejs/index.js`
 
 # React
 
-In another terminal, run `npm start`
+In another terminal tab, run `npm start`
