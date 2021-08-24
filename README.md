@@ -10,7 +10,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 3. After cloning this repo, make a .env file.
 
-4. Add a variable key REACT_APP_WEATHER_KEY and set it equal to your weather api key. Ex: REACT_APP_WEATHER_KEY = YOUR_API_KEY
+4. Add a variable key REACT_APP_WEATHER_KEY and set it equal to your weather api key.
+  Ex: REACT_APP_WEATHER_KEY = YOUR_API_KEY
 
 # Node JS
 
